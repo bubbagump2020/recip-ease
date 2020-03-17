@@ -7,8 +7,8 @@
         "yarn": "1.21.1"
     },
     "scripts": {
-        "build": "yarn --cwd recip-ease/recip-ease-frontend install && yarn --cwd recip-ease/recip-ease-frontend build",
-        "deploy": "cp -a recip-ease/recip-ease-frontend/build/. public",
+        "build": "yarn --cwd recip-ease-frontend install && yarn --cwd recip-ease-frontend build",
+        "deploy": "cp -a recip-ease-frontend/build/. public",
         "heroku-postbuild": "yarn build && yarn deploy"
     }
 }

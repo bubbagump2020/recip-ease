@@ -1,2 +1,2 @@
-web: rails server -p 3001
+web: bundle exec rails s
 release: bin/rake db:migrate

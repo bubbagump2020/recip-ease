@@ -56,7 +56,7 @@ const SignIn = (props) => {
         
         
         const loggedInUser = await resultUser.json()
-        // console.log(loggedInUser)
+        console.log(loggedInUser)
         // if(loggedInUser.success){
         //     sessionStorage.setItem('userToken', loggedInUser.token.session_id)
         //     console.log(props)

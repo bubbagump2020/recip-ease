@@ -1,0 +1,8 @@
+export const ingActions = {
+    ING_NAME: 'ING_NAME',
+    ING_MEASURE: 'ING_MEASURE',
+    CREATE_ING: 'CREATE_ING',
+    DELETE_ING: 'DELETE_ING',
+    UPDATE_ING: 'UPDATE_ING',
+    ALL_ING: 'ALL_ING'
+}

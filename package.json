@@ -1,0 +1,14 @@
+{
+    "name": "recipe-book",
+    "license": "MIT",
+    "engines": {
+        "node": "12.13.1",
+        "npm": "6.14.2",
+        "yarn": "1.21.1"
+    },
+    "scripts": {
+        "build": "yarn --cwd recip-ease-frontend install && yarn --cwd recip-ease-frontend build",
+        "deploy": "cp -a recip-ease-frontend/build/. public",
+        "heroku-postbuild": "yarn build && yarn deploy"
+    }
+}

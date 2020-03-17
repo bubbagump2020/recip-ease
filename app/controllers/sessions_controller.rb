@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
         
         if(user && user.authenticate(login_params[:password]))
             session[:username] = user.username
-            render json: { user_id: user.id, success: true, token: session, message: "Login Successful" }
             reset_session
+            render json: { user_id: user.id, success: true, token: session, message: "Login Successful" }
         else
             render json: { success: false, errors: "Login Failed. Username or Password incorrect"  }
         end

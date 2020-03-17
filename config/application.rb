@@ -23,6 +23,7 @@ module RecipeBookApi
   class Application < Rails::Application
     config.load_defaults 6.0
     config.api_only = true
+    config.public_file_server.enabled
     # config.force_ssl = true
     config.filter_parameters << :password
     config.middleware.use ActionDispatch::Cookies

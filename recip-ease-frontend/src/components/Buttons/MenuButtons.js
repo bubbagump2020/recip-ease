@@ -47,7 +47,7 @@ export const SignOutButton = () => {
 
     const logOutClick = async () => {
         sessionStorage.clear('userToken')
-        const logOutResponse = await fetch(`${ROOT_URL}/logout`, {
+        const logOutResponse = await fetch(`/logout`, {
             method: 'DELETE',
             credentials: 'include',
             headers: {

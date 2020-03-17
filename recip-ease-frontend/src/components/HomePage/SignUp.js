@@ -15,7 +15,6 @@ const SignUp = (props) => {
         toast.error("Passwords don't match", { position: toast.POSITION.TOP_CENTER })
     }
     
-
     const handleSubmit = async (e) => {
         e.preventDefault()
         if (authUser.password === authUser.confirm_password){

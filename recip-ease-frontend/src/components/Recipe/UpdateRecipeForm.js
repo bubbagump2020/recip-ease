@@ -16,7 +16,7 @@ const UpdateRecipeForm = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const updatedRecipeResponse = await fetch(`${ROOT_URL}/recipes/${recipe.id}`, {
+        const updatedRecipeResponse = await fetch(`/recipes/${recipe.id}`, {
             method: 'PATCH',
             credentials: 'include',
             headers: {
@@ -29,7 +29,7 @@ const UpdateRecipeForm = (props) => {
             })
         })
         const updatedRecipe = await updatedRecipeResponse.json()
-        const updatedRecipeListResponse = await fetch(`${ROOT_URL}/users/${authUser}/recipes`)
+        const updatedRecipeListResponse = await fetch(`/users/${authUser}/recipes`)
         const updatedRecipeList = await updatedRecipeListResponse.json()
         dispatch(currentUserRecipes(updatedRecipeList))
     }

@@ -71,13 +71,13 @@ const RecipeCard = (props) => {
     const handleDeleteClick = () => {
         // Have confirmation Window asking user to be sure!
         const asyncDeleteFetch = async () => {
-            const deleteResponse = await fetch(`${ROOT_URL}/recipes/${recipe.id}`,{
+            const deleteResponse = await fetch(`/recipes/${recipe.id}`,{
                 method: "delete",
                 credentials: "include"
             })
             const deletedRecipe = await deleteResponse.json()
             dispatch(deleteRecipe(deletedRecipe))
-            const updatedRecipeListResponse = await fetch(`${ROOT_URL}/users/${authUser.token.username}/recipes`)
+            const updatedRecipeListResponse = await fetch(`/users/${authUser.token.username}/recipes`)
             const updatedRecipeList = await updatedRecipeListResponse.json()
             const userRecipes = updatedRecipeList.recipes.filter(recipe => recipe.user_id === authUser.user_id)
             dispatch(currentUserRecipes(userRecipes))

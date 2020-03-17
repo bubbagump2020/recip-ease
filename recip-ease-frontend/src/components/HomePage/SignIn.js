@@ -37,10 +37,6 @@ const SignIn = (props) => {
     const { authUser } = useSelector(state => ({ authUser: state.authentication.user }))
     const loginProps = props.props
 
-    var token = document
-    console.log(token)
-
-
     const handleSubmit = async (e) => {
         e.preventDefault()
         const resultUser = await fetch(`/login`, {
@@ -60,12 +56,11 @@ const SignIn = (props) => {
         
         
         const loggedInUser = await resultUser.json()
-        console.log(loggedInUser)
         if(loggedInUser.success){
             sessionStorage.setItem('userToken', loggedInUser.token.session_id)
             console.log(props)
             dispatch(authenticatedUser(loggedInUser))
-            loginProps.history.push(`/users/${loggedInUser.token.username}`)
+            loginProps.history.push(`/users/${loggedInUser.username}`)
             const successToast = () => {
                 toast.success("Welcome!")
             }

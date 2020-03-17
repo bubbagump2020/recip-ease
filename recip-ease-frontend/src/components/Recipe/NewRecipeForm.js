@@ -26,7 +26,7 @@ const NewRecipeForm = (props) => {
     const { recipe } = useSelector(state => ({ recipe: state.recipe.recipe }))
 
     const handleSubmit = async (e) => {
-        const submitResponse = await fetch(`${ROOT_URL}/users/${authUser.token.username}/recipes`, {
+        const submitResponse = await fetch(`/users/${authUser.token.username}/recipes`, {
             method: 'POST',
             credentials: 'include',
             headers: {

@@ -10,6 +10,7 @@ import {
     Button
 } from '@material-ui/core'
 import SignUp from './SignUp'
+import SignIn from './SignIn'
 import 'typeface-roboto'
 
 const useStyles = makeStyles(theme => ({
@@ -56,6 +57,11 @@ const Homepage = (props) => {
                 <Grid item xs={12}>
                     <Paper elevation={3} className={classes.paper}>
                         <SignUp props={props}/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={12}>
+                    <Paper elevation={3} className={classes.paper}>
+                        <SignIn props={props} />
                     </Paper>
                 </Grid>
                 <Grid item xs={12}>

@@ -41,7 +41,7 @@ const Homepage = (props) => {
                     <Typography variant="h5" className={classes.title}>
                         Recip-Ease
                     </Typography>
-                    <Button color="inherit" href="/sessions/new">Sign In</Button>
+                    <Button color="inherit" href="peaceful-meadow-93545.herokuapp.com/sessions/new">Sign In</Button>
                 </Toolbar>
             </AppBar>
             <Grid container>
@@ -60,9 +60,9 @@ const Homepage = (props) => {
                     </Paper>
                 </Grid>
                 <Grid item xs={12}>
-                    <Paper elevation={3} className={classes.paper}>
+                    {/* <Paper elevation={3} className={classes.paper}>
                         <SignIn props={props} />
-                    </Paper>
+                    </Paper> */}
                 </Grid>
                 <Grid item xs={12}>
                     <Paper elevation={1} className={classes.paper}>

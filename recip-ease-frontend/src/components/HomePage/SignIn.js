@@ -35,7 +35,7 @@ const SignIn = (props) => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const { authUser } = useSelector(state => ({ authUser: state.authentication.user }))
-    const loginProps = props
+    const loginProps = props.props
 
     var token = document
     console.log(token)

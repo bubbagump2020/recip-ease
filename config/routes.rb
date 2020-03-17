@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :ingredients, shallow: true
   end
   
+  get '/new', to: ("sessions#login")
   post '/login', to: ("sessions#login")
   delete '/logout', to: ("sessions#logout")
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do

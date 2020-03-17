@@ -19,7 +19,7 @@ const SignUp = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         if (authUser.password === authUser.confirm_password){
-            const response = await fetch(`${ROOT_URL}/users`, {
+            const response = await fetch(`/users`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

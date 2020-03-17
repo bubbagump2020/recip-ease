@@ -56,21 +56,22 @@ const SignIn = (props) => {
         
         
         const loggedInUser = await resultUser.json()
-        if(loggedInUser.success){
-            sessionStorage.setItem('userToken', loggedInUser.token.session_id)
-            console.log(props)
-            dispatch(authenticatedUser(loggedInUser))
-            loginProps.history.push(`/users/${loggedInUser.username}`)
-            const successToast = () => {
-                toast.success("Welcome!")
-            }
-            successToast()
-        } else {
-            const failToast = () => {
-                toast.error(loggedInUser.errors, { position: toast.POSITION.TOP_CENTER })
-            }
-            failToast()
-        }
+        // console.log(loggedInUser)
+        // if(loggedInUser.success){
+        //     sessionStorage.setItem('userToken', loggedInUser.token.session_id)
+        //     console.log(props)
+        //     dispatch(authenticatedUser(loggedInUser))
+        //     loginProps.history.push(`/users/${loggedInUser.username}`)
+        //     const successToast = () => {
+        //         toast.success("Welcome!")
+        //     }
+        //     successToast()
+        // } else {
+        //     const failToast = () => {
+        //         toast.error(loggedInUser.errors, { position: toast.POSITION.TOP_CENTER })
+        //     }
+        //     failToast()
+        // }
     }
 
     const handlePasswordEntry = (e) => {

@@ -17,7 +17,6 @@ import {
     confirmPassword,
     username,
     authenticatedUser,
-    checkLogin
 } from '../../redux/actions/authActions'
 
 const useStyles = makeStyles(theme => ({

@@ -1,18 +1,16 @@
 import React from 'react';
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
-import { PrivateRoute } from './components/Home/PrivateRoute'
-import Homepage from './components/Home/Homepage'
+import { PrivateRoute } from './components/HomePage/PrivateRoute'
+import Homepage from './components/HomePage/Homepage'
 import UserHomepage from './components/User/UserHomepage'
 import RecipeContainer from './components/Recipe/RecipeContainer'
 import NewRecipeForm from './components/Recipe/NewRecipeForm';
-import SignIn from './components/Home/SignIn';
+import SignIn from './components/HomePage/SignIn';
 
 function App() {
   return (

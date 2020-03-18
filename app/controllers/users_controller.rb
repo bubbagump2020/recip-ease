@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    respond_to :js
+    respond_to :html
 
     def create
         user = User.new(user_params)
@@ -11,8 +13,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        user = User.find_by_username(user_params[:username])
-        render json: { user: user }
+        render json: @current_user
     end
 
     private

@@ -78,7 +78,7 @@ const RecipeCard = (props) => {
             dispatch(deleteRecipe(deletedRecipe))
             const updatedRecipeListResponse = await fetch(`/recipes`)
             const updatedRecipeList = await updatedRecipeListResponse.json()
-            const userRecipes = updatedRecipeList.recipes.filter(recipe => recipe.user_id === authUser.user_id)
+            const userRecipes = updatedRecipeList.filter(recipe => recipe.user_id === authUser.user_id)
             dispatch(currentUserRecipes(userRecipes))
         }
         asyncDeleteFetch()

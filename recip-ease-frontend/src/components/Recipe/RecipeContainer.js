@@ -77,7 +77,7 @@ const RecipeContainer = () => {
             </AppBar>
             <Container maxWidth="xl" className={classes.content}>
                 <div className={classes.toolbar} />
-                    {/* {showRecipes()} */}
+                    {showRecipes()}
             </Container>
         </div>
     )

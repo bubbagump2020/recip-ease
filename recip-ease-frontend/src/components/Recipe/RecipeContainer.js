@@ -41,7 +41,7 @@ const RecipeContainer = () => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const { authUser } = useSelector(state => ({authUser: state.authentication.loggedInUser }))
-    const { userRecipes } = useSelector(state => ({ userRecipes: state.recipe.currentUserRecipes.recipes }))
+    const { userRecipes } = useSelector(state => ({ userRecipes: state.recipe.currentUserRecipes }))
 
     React.useEffect(() => {
         const fetchRecipes = async () => {
@@ -63,8 +63,6 @@ const RecipeContainer = () => {
         })
     }
 
-    console.log(userRecipes)
-
     return(
         <div>
             <AppBar className={classes.appBar} position="sticky">
@@ -79,7 +77,7 @@ const RecipeContainer = () => {
             </AppBar>
             <Container maxWidth="xl" className={classes.content}>
                 <div className={classes.toolbar} />
-                    {/* {showRecipes()} */}
+                    {showRecipes()}
             </Container>
         </div>
     )

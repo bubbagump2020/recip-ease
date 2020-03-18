@@ -55,6 +55,7 @@ const IngredientCard = (props) => {
             method: 'DELETE',
             credentials: 'include'
         })
+        const deletedRecipe = await deleteResponse.json()
         const reFetchResponse = await fetch(`/ingredients`)
         const reFetchData = await reFetchResponse.json()
         dispatch(allIng(reFetchData))

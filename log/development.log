@@ -33035,3 +33035,9 @@ Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 250)
   [1m[35m (15.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "recipe_book_api_test"[0m
   [1m[35m (143.3ms)[0m  [1m[35mCREATE DATABASE "recipe_book_api_development" ENCODING = 'UTF8'[0m
   [1m[35m (87.2ms)[0m  [1m[35mCREATE DATABASE "recipe_book_api_test" ENCODING = 'UTF8'[0m
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/kevin/.rbenv/versions/2.6.3/bin/rake:23)
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/kevin/.rbenv/versions/2.6.3/bin/rake:23)
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/kevin/.rbenv/versions/2.6.3/bin/rake:23)

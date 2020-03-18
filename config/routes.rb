@@ -5,9 +5,7 @@ Rails.application.routes.draw do
 
   # get '/:username', to 'users#show'
 
-  resources :users, only: [:create], param: :username do
-    resources :recipes, shallow: true
-  end
+  resources :users, only: [:create], param: :username
 
   resources :recipes do 
     resources :ingredients, shallow: true

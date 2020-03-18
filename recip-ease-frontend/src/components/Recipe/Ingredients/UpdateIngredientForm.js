@@ -1,8 +1,7 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Button, TextField} from '@material-ui/core'
-import { ingName, ingMeasure, allIng, updateIng } from '../../../redux/actions/ingActions'
-import { ROOT_URL } from '../../Constants/Constants'
+import { allIng, updateIng } from '../../../redux/actions/ingActions'
 
 const UpdateIngredientForm = (props) => {
 
@@ -12,7 +11,6 @@ const UpdateIngredientForm = (props) => {
         name: ingredient.name,
         measurement: ingredient.measurement,
     })
-    const recipe = props.ingredient.recipe
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -31,7 +29,7 @@ const UpdateIngredientForm = (props) => {
         })
         const updateIngredient = await updateResponse.json()
         dispatch(updateIng(updateIngredient))
-        const updatedIngListResponse = await fetch(`/recipes/${recipe.recipe_id}/ingredients`)
+        const updatedIngListResponse = await fetch(`/ingredients`)
         const updatedIngList = await updatedIngListResponse.json()
         dispatch(allIng(updatedIngList))
     } 

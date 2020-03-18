@@ -13,7 +13,6 @@ import {
 } from '@material-ui/core'
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import { ROOT_URL } from '../../Constants/Constants'
 import { useDispatch } from 'react-redux'
 import { allIng } from '../../../redux/actions/ingActions'
 import UpdateIngredientForm from './UpdateIngredientForm'
@@ -56,7 +55,7 @@ const IngredientCard = (props) => {
             method: 'DELETE',
             credentials: 'include'
         })
-        const reFetchResponse = await fetch(`/recipes/${recipe.name}/ingredients`)
+        const reFetchResponse = await fetch(`/ingredients`)
         const reFetchData = await reFetchResponse.json()
         dispatch(allIng(reFetchData))
     }

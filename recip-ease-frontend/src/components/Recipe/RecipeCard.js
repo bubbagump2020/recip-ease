@@ -16,7 +16,6 @@ import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined'
 import NewIngredientForm from './Ingredients/NewIngredientForm'
 import IngredientContainer from './Ingredients/IngredientContainer'
 import UpdateRecipeForm from './UpdateRecipeForm'
-import { ROOT_URL } from '../Constants/Constants'
 import Beef from '../assets/new_beef.jpeg'
 import Poultry from '../assets/chiken.jpeg'
 import Pork from '../assets/new_pork.jpeg'
@@ -77,7 +76,7 @@ const RecipeCard = (props) => {
             })
             const deletedRecipe = await deleteResponse.json()
             dispatch(deleteRecipe(deletedRecipe))
-            const updatedRecipeListResponse = await fetch(`/users/${authUser.username}/recipes`)
+            const updatedRecipeListResponse = await fetch(`/recipes`)
             const updatedRecipeList = await updatedRecipeListResponse.json()
             const userRecipes = updatedRecipeList.recipes.filter(recipe => recipe.user_id === authUser.user_id)
             dispatch(currentUserRecipes(userRecipes))

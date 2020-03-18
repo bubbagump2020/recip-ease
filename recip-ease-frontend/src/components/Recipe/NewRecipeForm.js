@@ -1,6 +1,5 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { ROOT_URL } from '../Constants/Constants'
 import { Box, Container, Typography, AppBar, Toolbar, Button, makeStyles, TextField, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@material-ui/core'
 import { UserHomeButton, RecipeIndexButton, SignOutButton} from '../Buttons/MenuButtons'
 import { recipeName, recipeDesc, recipeInst, reciValue } from '../../redux/actions/reciActions'
@@ -19,14 +18,14 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const NewRecipeForm = (props) => {
+const NewRecipeForm = () => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const { authUser } = useSelector(state => ({authUser: state.authentication.loggedInUser }))
     const { recipe } = useSelector(state => ({ recipe: state.recipe.recipe }))
 
-    const handleSubmit = async (e) => {
-        const submitResponse = await fetch(`/users/${authUser.username}/recipes`, {
+    const handleSubmit = async () => {
+        const submitResponse = await fetch(`/recipes`, {
             method: 'POST',
             credentials: 'include',
             headers: {
@@ -43,8 +42,6 @@ const NewRecipeForm = (props) => {
             })
         })
         const submitData = await submitResponse.json()
-        // Form Error Catching Here
-
     }
 
     return(

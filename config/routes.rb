@@ -7,9 +7,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create], param: :username
 
-  resources :recipes do 
-    resources :ingredients, shallow: true
-  end
+  resources :recipes
+  resources :ingredients
   
   post '/login', to: ("sessions#login")
   delete '/logout', to: ("sessions#logout")

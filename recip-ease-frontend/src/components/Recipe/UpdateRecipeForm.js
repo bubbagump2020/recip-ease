@@ -2,12 +2,10 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Button, TextField } from '@material-ui/core'
 import { currentUserRecipes } from '../../redux/actions/reciActions'
-import { ROOT_URL } from '../Constants/Constants'
 
 const UpdateRecipeForm = (props) => {
 
     const dispatch = useDispatch()
-    const { authUser } = useSelector(state =>({ authUser: state.authentication.loggedInUser.username }))
     const instructions = props.recipe.instruction
     const [ recipe, setRecipe ] = React.useState({
         id: props.recipe.id,
@@ -29,7 +27,7 @@ const UpdateRecipeForm = (props) => {
             })
         })
         const updatedRecipe = await updatedRecipeResponse.json()
-        const updatedRecipeListResponse = await fetch(`/users/${authUser}/recipes`)
+        const updatedRecipeListResponse = await fetch(`/recipes`)
         const updatedRecipeList = await updatedRecipeListResponse.json()
         dispatch(currentUserRecipes(updatedRecipeList))
     }

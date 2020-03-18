@@ -1,5 +1,4 @@
 import React from 'react'
-import { ROOT_URL } from '../../Constants/Constants'
 import { Box, TextField, Button } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
 import { ingName, ingMeasure, allIng, createIng } from '../../../redux/actions/ingActions'
@@ -13,7 +12,7 @@ const NewIngredientForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         const submitFetch = async () => {
-            const response = await fetch(`/recipes/${ingredientRecipeId}/ingredients`, {
+            const response = await fetch(`/ingredients`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -28,7 +27,7 @@ const NewIngredientForm = (props) => {
             })
             const createData = response.json()
             dispatch(createIng(createData))
-            const newFetchResponse = await fetch(`/recipes/${ingredientRecipeId}/ingredients`)
+            const newFetchResponse = await fetch(`/ingredients`)
             const updatedIngList = await newFetchResponse.json()
             const dispatchUpdatedIngList = updatedIngList.filter(ingredient => ingredient.recipe_id === ingredientRecipeId)
             dispatch(allIng(dispatchUpdatedIngList))

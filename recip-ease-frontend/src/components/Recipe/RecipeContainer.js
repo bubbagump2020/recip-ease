@@ -53,6 +53,8 @@ const RecipeContainer = () => {
         fetchRecipes()
     }, [authUser.token.username, authUser.user_id, dispatch])
 
+    console.log(userRecipes)
+
     const showRecipes = () => {
         return userRecipes.map(recipe => {
             return(
@@ -77,7 +79,7 @@ const RecipeContainer = () => {
             </AppBar>
             <Container maxWidth="xl" className={classes.content}>
                 <div className={classes.toolbar} />
-                    {showRecipes()}
+                    {/* {showRecipes()} */}
             </Container>
         </div>
     )

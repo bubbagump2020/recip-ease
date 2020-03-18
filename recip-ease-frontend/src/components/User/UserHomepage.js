@@ -30,6 +30,7 @@ const UserHomepage = () => {
 
     const classes = useStyles()
     const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.username }))
+    console.log(user)
 
     return(
         <div className={classes.root}>

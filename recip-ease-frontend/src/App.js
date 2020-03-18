@@ -17,7 +17,7 @@ function App() {
     <div>
       <Router>
         <Route exact path="/" component={Homepage} />
-        <Route exact path="/sessions/new" component={SignIn} />
+        <Route path="/sessions/new" component={SignIn} />
         <PrivateRoute exact path="/users/:username" component={UserHomepage} />
         <PrivateRoute exact path="/users/:username/recipes" component={RecipeContainer} />
         <PrivateRoute exact path="/users/:username/recipes/new" component={NewRecipeForm} />

@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-    respond_to :js
-    respond_to :html
 
     def create
         user = User.new(user_params)

@@ -35,7 +35,7 @@ const SignIn = (props) => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const { authUser } = useSelector(state => ({ authUser: state.authentication.user }))
-    const loginProps = props.props
+    const loginProps = props
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -44,7 +44,6 @@ const SignIn = (props) => {
             credentials: 'include',
             headers: {
                 'X-Requested-With': 'XmlHttpRequest',
-                'X-CSRF-Token': 'my-csrf-token',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
@@ -56,7 +55,7 @@ const SignIn = (props) => {
         
         
         const loggedInUser = await resultUser.json()
-        console.log(loggedInUser)
+        console.log(loggedInUser.username)
         console.log(loginProps)
         // if(loggedInUser.success){
         //     sessionStorage.setItem('userToken', loggedInUser.token.session_id)

@@ -1,5 +1,5 @@
 import React from 'react'
-import useDispatch from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Button, TextField } from '@material-ui/core'
 import { currentUserRecipes } from '../../redux/actions/reciActions'
 

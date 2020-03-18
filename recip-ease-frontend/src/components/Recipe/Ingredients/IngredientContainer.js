@@ -11,7 +11,7 @@ const IngredientContainer = (props) => {
 
     useEffect(() => {
         const fetchIngredients = async () => {
-            const response = await fetch(`${ROOT_URL}/recipes/${props.recipe.name}/ingredients`)
+            const response = await fetch(`$/recipes/${props.recipe.name}/ingredients`)
             const ingData = await response.json()
             const dispatchData = ingData.filter(ingredient => ingredient.recipe_id === props.recipe.id )
             dispatch(allIng(dispatchData))

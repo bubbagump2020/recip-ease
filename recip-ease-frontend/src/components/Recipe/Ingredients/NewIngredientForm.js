@@ -13,7 +13,7 @@ const NewIngredientForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         const submitFetch = async () => {
-            const response = await fetch(`${ROOT_URL}/recipes/${ingredientRecipeId}/ingredients`, {
+            const response = await fetch(`/recipes/${ingredientRecipeId}/ingredients`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -28,7 +28,7 @@ const NewIngredientForm = (props) => {
             })
             const createData = response.json()
             dispatch(createIng(createData))
-            const newFetchResponse = await fetch(`${ROOT_URL}/recipes/${ingredientRecipeId}/ingredients`)
+            const newFetchResponse = await fetch(`/recipes/${ingredientRecipeId}/ingredients`)
             const updatedIngList = await newFetchResponse.json()
             const dispatchUpdatedIngList = updatedIngList.filter(ingredient => ingredient.recipe_id === ingredientRecipeId)
             dispatch(allIng(dispatchUpdatedIngList))

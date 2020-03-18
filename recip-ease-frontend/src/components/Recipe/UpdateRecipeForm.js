@@ -7,7 +7,7 @@ import { ROOT_URL } from '../Constants/Constants'
 const UpdateRecipeForm = (props) => {
 
     const dispatch = useDispatch()
-    const { authUser } = useSelector(state =>({ authUser: state.authentication.loggedInUser.token.username }))
+    const { authUser } = useSelector(state =>({ authUser: state.authentication.loggedInUser.username }))
     const instructions = props.recipe.instruction
     const [ recipe, setRecipe ] = React.useState({
         id: props.recipe.id,

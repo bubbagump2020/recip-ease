@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 const UserHomepage = () => {
 
     const classes = useStyles()
-    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.token.username }))
+    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.username }))
 
     return(
         <div className={classes.root}>

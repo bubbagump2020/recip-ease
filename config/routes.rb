@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create], param: :username
 
-  resources :recipes, only: [:index, :create, :delete, :update ]
-  resources :ingredients, only: [:index, :create, :delete, :update ]
+  resources :recipes, only: [:index, :create, :destroy, :update ]
+  resources :ingredients, only: [:index, :create, :destroy, :update ]
   
   post '/login', to: ("sessions#login")
   delete '/logout', to: ("sessions#logout")

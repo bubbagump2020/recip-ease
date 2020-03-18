@@ -206,7 +206,7 @@ const RecipeCard = (props) => {
                                 Ingredients
                             </Typography>
                         </ExpansionPanelSummary>
-                        <ExpansionPanelDetails className={classes.ingCont} style={{ width: '100%'}}>
+                        <ExpansionPanelDetails className={classes.ingCont} >
                             <IngredientContainer recipe={recipe}/>
                         </ExpansionPanelDetails>
                         <ExpansionPanelDetails>
@@ -226,7 +226,6 @@ const RecipeCard = (props) => {
                             </ExpansionPanel>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
-                    
                     <ExpansionPanel>
                         <ExpansionPanelSummary
                             expandIcon={<ExpandMoreIcon />}

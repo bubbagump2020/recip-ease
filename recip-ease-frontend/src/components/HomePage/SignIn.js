@@ -60,7 +60,7 @@ const SignIn = (props) => {
         if(loggedInUser.success){
             sessionStorage.setItem('userToken', loggedInUser.token.session_id)
             dispatch(authenticatedUser(loggedInUser))
-            loginProps.history.push(`/users/${loggedInUser.username}`)
+            loginProps.history.push(`/users/${loggedInUser.user_name}`)
             const successToast = () => {
                 toast.success("Welcome!")
             }

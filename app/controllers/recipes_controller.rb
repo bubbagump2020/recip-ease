@@ -1,18 +1,18 @@
 class RecipesController < ApplicationController
     
-    def index
-        recipes = Recipe.all
-        render json: { recipes: recipes, current_user: @current_user}
-    end
+    # def index
+    #     recipes = Recipe.all
+    #     render json: { recipes: recipes, current_user: @current_user}
+    # end
 
-    def show
-        recipe = Recipe.find_by(params[:id])
-        if (!recipe)
-            render json: "Unable to find recipe"
-        else
-            render json: recipe
-        end
-    end
+    # def show
+    #     recipe = Recipe.find_by(params[:id])
+    #     if (!recipe)
+    #         render json: "Unable to find recipe"
+    #     else
+    #         render json: recipe
+    #     end
+    # end
 
     def create
         recipe = Recipe.new(recipe_params)

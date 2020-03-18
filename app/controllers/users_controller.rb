@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: @current_user
+        user = User.find_by_username(userparams[:username])
+        render json: user
     end
 
     private

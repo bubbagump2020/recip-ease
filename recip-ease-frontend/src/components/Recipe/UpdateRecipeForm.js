@@ -28,7 +28,6 @@ const UpdateRecipeForm = (props) => {
         })
         const updatedRecipeListResponse = await fetch(`/recipes`)
         const updatedRecipeList = await updatedRecipeListResponse.json()
-        console.log(updatedRecipeList)
         dispatch(currentUserRecipes(updatedRecipeList))
     }
 

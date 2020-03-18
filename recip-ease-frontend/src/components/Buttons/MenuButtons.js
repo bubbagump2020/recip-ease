@@ -52,7 +52,6 @@ export const SignOutButton = () => {
             })
         })
         const logOut = await logOutResponse.json()
-        console.log(logOut)
         setNavigate(true)
     }
 

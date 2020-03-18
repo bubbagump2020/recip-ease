@@ -21,7 +21,7 @@ export const RecipeIndexButton = () => {
 
     return(
         <React.Fragment>
-            <Button color="inherit" href={`/users/${user}/recipes`}>
+            <Button color="inherit" href={`/recipes`}>
                 Recipes
             </Button>
         </React.Fragment>
@@ -34,7 +34,7 @@ export const CreateRecipeButton = () => {
 
     return(
         <React.Fragment>
-            <Button color="inherit" href={`/users/${user}/recipes/new`}>
+            <Button color="inherit" href={`/recipes/new`}>
                 Create Recipe
             </Button>
         </React.Fragment>

@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom'
 import { ROOT_URL } from '../Constants/Constants'
 
 export const UserHomeButton = () => {
-    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.token.username }))
+    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.username }))
     return(
         <React.Fragment>
             <Button color="inherit" href={`/users/${user}`}>

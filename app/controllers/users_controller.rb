@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        user = User.find_by_username(userparams[:username])
+        user = User.find_by_username(user_params[:username])
         render json: user
     end
 

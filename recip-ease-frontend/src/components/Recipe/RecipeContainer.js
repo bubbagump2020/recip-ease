@@ -1,5 +1,4 @@
 import React from 'react'
-import { ROOT_URL } from '../Constants/Constants'
 import RecipeCard from './RecipeCard'
 import {
     AppBar,

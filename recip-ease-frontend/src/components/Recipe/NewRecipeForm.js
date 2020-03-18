@@ -41,7 +41,6 @@ const NewRecipeForm = () => {
                 category: recipe.value
             })
         })
-        const submitData = await submitResponse.json()
     }
 
     return(

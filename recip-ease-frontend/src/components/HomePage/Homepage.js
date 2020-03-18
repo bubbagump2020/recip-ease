@@ -10,7 +10,6 @@ import {
     Button
 } from '@material-ui/core'
 import SignUp from './SignUp'
-import SignIn from './SignIn'
 import 'typeface-roboto'
 
 const useStyles = makeStyles(theme => ({

@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Button } from '@material-ui/core'
 import { Redirect } from 'react-router-dom'
-import { ROOT_URL } from '../Constants/Constants'
 
 export const UserHomeButton = () => {
     const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.username }))

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import useDispatch from 'react-redux'
 import { Button, TextField } from '@material-ui/core'
 import { currentUserRecipes } from '../../redux/actions/reciActions'
 
@@ -26,7 +26,6 @@ const UpdateRecipeForm = (props) => {
                 instruction: recipe.instructions
             })
         })
-        const updatedRecipe = await updatedRecipeResponse.json()
         const updatedRecipeListResponse = await fetch(`/recipes`)
         const updatedRecipeList = await updatedRecipeListResponse.json()
         console.log(updatedRecipeList)

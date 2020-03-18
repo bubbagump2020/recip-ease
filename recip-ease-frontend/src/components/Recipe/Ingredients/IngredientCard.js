@@ -8,7 +8,6 @@ import {
     Typography,
     ExpansionPanel,
     ExpansionPanelSummary,
-    Paper,
     ExpansionPanelDetails,
 } from '@material-ui/core'
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined'
@@ -47,7 +46,6 @@ const IngredientCard = (props) => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const ingredient = props.ing
-    const recipe = props.recipe
 
     const handleDeleteClick = async (e) => {
         e.preventDefault()
@@ -55,7 +53,6 @@ const IngredientCard = (props) => {
             method: 'DELETE',
             credentials: 'include'
         })
-        const deletedIngredient = await deleteResponse.json()
         const reFetchResponse = await fetch(`/ingredients`)
         const reFetchData = await reFetchResponse.json()
         dispatch(allIng(reFetchData))

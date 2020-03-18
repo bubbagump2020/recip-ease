@@ -53,7 +53,6 @@ const useStyles = makeStyles(theme => ({
         
         padding: theme.spacing(2),
     }
-
 }))
 
 const RecipeCard = (props) => {
@@ -68,7 +67,6 @@ const RecipeCard = (props) => {
     }
 
     const handleDeleteClick = () => {
-        // Have confirmation Window asking user to be sure!
         const asyncDeleteFetch = async () => {
             const deleteResponse = await fetch(`/recipes/${recipe.id}`,{
                 method: "delete",

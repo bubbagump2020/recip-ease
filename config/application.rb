@@ -24,6 +24,7 @@ module RecipeBookApi
     config.load_defaults 6.0
     config.api_only = true
     config.public_file_server.enabled
+    config.action_controller.default_protect_from_forgery = true
     # config.force_ssl = true
     config.filter_parameters << :password
     config.middleware.use ActionDispatch::Flash

@@ -47,22 +47,23 @@ const RecipeContainer = () => {
         const fetchRecipes = async () => {
             const response = await fetch(`/recipes`)
             const recipes = await response.json()
-            console.log(recipes)
             const userRecipes = recipes.recipes.filter(recipe => recipe.user_id === authUser.user_id)
             dispatch(currentUserRecipes(userRecipes))
         }
         fetchRecipes()
     }, [authUser.token.username, authUser.user_id, dispatch])
 
-    const showRecipes = () => {
-        return userRecipes.map(recipe => {
-            return(
-                <React.Fragment key={recipe.id}>
-                    <RecipeCard attributes={recipe} id={recipe.id} user={authUser.token.username}/>
-                </React.Fragment>
-            )
-        })
-    }
+    console.log(userRecipes)
+
+    // const showRecipes = () => {
+    //     return userRecipes.map(recipe => {
+    //         return(
+    //             <React.Fragment key={recipe.id}>
+    //                 <RecipeCard attributes={recipe} id={recipe.id} user={authUser.token.username}/>
+    //             </React.Fragment>
+    //         )
+    //     })
+    // }
 
     return(
         <div>
@@ -78,7 +79,7 @@ const RecipeContainer = () => {
             </AppBar>
             <Container maxWidth="xl" className={classes.content}>
                 <div className={classes.toolbar} />
-                    {showRecipes()}
+                    {/* {showRecipes()} */}
             </Container>
         </div>
     )

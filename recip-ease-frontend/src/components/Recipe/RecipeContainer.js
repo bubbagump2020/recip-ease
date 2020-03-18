@@ -41,7 +41,7 @@ const RecipeContainer = () => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const { authUser } = useSelector(state => ({authUser: state.authentication.loggedInUser }))
-    const { userRecipes } = useSelector(state => ({ userRecipes: state.recipe.currentUserRecipes }))
+    const { userRecipes } = useSelector(state => ({ userRecipes: state.recipe.currentUserRecipes.recipes }))
 
     React.useEffect(() => {
         const fetchRecipes = async () => {
@@ -53,17 +53,15 @@ const RecipeContainer = () => {
         fetchRecipes()
     }, [authUser.token.username, authUser.user_id, dispatch])
 
-    console.log(userRecipes)
-
-    // const showRecipes = () => {
-    //     return userRecipes.map(recipe => {
-    //         return(
-    //             <React.Fragment key={recipe.id}>
-    //                 <RecipeCard attributes={recipe} id={recipe.id} user={authUser.token.username}/>
-    //             </React.Fragment>
-    //         )
-    //     })
-    // }
+    const showRecipes = () => {
+        return userRecipes.map(recipe => {
+            return(
+                <React.Fragment key={recipe.id}>
+                    <RecipeCard attributes={recipe} id={recipe.id} user={authUser.token.username}/>
+                </React.Fragment>
+            )
+        })
+    }
 
     return(
         <div>

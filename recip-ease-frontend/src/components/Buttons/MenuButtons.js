@@ -5,7 +5,6 @@ import { Redirect } from 'react-router-dom'
 import { ROOT_URL } from '../Constants/Constants'
 
 export const UserHomeButton = () => {
-    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.username }))
     return(
         <React.Fragment>
             <Button color="inherit" href={`/users/${user}`}>
@@ -16,9 +15,6 @@ export const UserHomeButton = () => {
 }
 
 export const RecipeIndexButton = () => {
-
-    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.username }))
-
     return(
         <React.Fragment>
             <Button color="inherit" href={`/recipes`}>
@@ -29,9 +25,6 @@ export const RecipeIndexButton = () => {
 }
 
 export const CreateRecipeButton = () => {
-
-    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.username }))
-
     return(
         <React.Fragment>
             <Button color="inherit" href={`/recipes/new`}>

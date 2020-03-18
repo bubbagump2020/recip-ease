@@ -51,9 +51,6 @@ const SignIn = (props) => {
                 password: authUser.password
             }),
         })
-
-        
-        
         const loggedInUser = await resultUser.json()
         if(loggedInUser.success){
             sessionStorage.setItem('userToken', loggedInUser.token.session_id)
@@ -70,7 +67,6 @@ const SignIn = (props) => {
             failToast()
         }
     }
-
     const handlePasswordEntry = (e) => {
         dispatch(password(e.target.value))
         dispatch(confirmPassword(e.target.value))

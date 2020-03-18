@@ -41,20 +41,18 @@ const RecipeContainer = () => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const { authUser } = useSelector(state => ({authUser: state.authentication.loggedInUser }))
-    // const { userRecipes } = useSelector(state => ({ userRecipes: state.recipe.currentUserRecipes }))
+    const { userRecipes } = useSelector(state => ({ userRecipes: state.recipe.currentUserRecipes }))
 
     React.useEffect(() => {
         const fetchRecipes = async () => {
             const response = await fetch(`/recipes`)
             const recipes = await response.json()
             console.log(recipes)
-            // const userRecipes = recipes.recipes.filter(recipe => recipe.user_id === authUser.user_id)
-            // dispatch(currentUserRecipes(userRecipes))
+            const userRecipes = recipes.filter(recipe => recipe.user_id === authUser.user_id)
+            dispatch(currentUserRecipes(userRecipes))
         }
         fetchRecipes()
     }, [authUser.token.username, authUser.user_id, dispatch])
-
-    // console.log(userRecipes)
 
     const showRecipes = () => {
         return userRecipes.map(recipe => {
@@ -80,7 +78,7 @@ const RecipeContainer = () => {
             </AppBar>
             <Container maxWidth="xl" className={classes.content}>
                 <div className={classes.toolbar} />
-                    {/* {showRecipes()} */}
+                    {showRecipes()}
             </Container>
         </div>
     )

@@ -51,11 +51,11 @@ const IngredientCard = (props) => {
 
     const handleDeleteClick = async (e) => {
         e.preventDefault()
-        const deleteResponse = await fetch(`$/ingredients/${ingredient.id}`,{
+        const deleteResponse = await fetch(`/ingredients/${ingredient.id}`,{
             method: 'DELETE',
             credentials: 'include'
         })
-        const deletedRecipe = await deleteResponse.json()
+        const deletedIngredient = await deleteResponse.json()
         const reFetchResponse = await fetch(`/ingredients`)
         const reFetchData = await reFetchResponse.json()
         dispatch(allIng(reFetchData))

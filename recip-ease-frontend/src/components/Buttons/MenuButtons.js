@@ -17,7 +17,7 @@ export const UserHomeButton = () => {
 
 export const RecipeIndexButton = () => {
 
-    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.token.username }))
+    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.username }))
 
     return(
         <React.Fragment>
@@ -30,7 +30,7 @@ export const RecipeIndexButton = () => {
 
 export const CreateRecipeButton = () => {
 
-    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.token.username }))
+    const { user } = useSelector(state => ({ user: state.authentication.loggedInUser.username }))
 
     return(
         <React.Fragment>

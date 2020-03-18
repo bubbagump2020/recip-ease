@@ -45,7 +45,7 @@ const RecipeContainer = () => {
 
     React.useEffect(() => {
         const fetchRecipes = async () => {
-            const response = await fetch(`/users/${authUser.username}/recipes`)
+            const response = await fetch(`/recipes`)
             const recipes = await response.json()
             console.log(recipes)
             const userRecipes = recipes.recipes.filter(recipe => recipe.user_id === authUser.user_id)

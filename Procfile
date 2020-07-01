@@ -1,3 +1,2 @@
-
-web: bundle exec rails server
-release: bin/rake db:migrate
+web: cd recip-ease-frontend && PORT=3000 yarn start
+api: PORT=3001 && bundle exec rails s

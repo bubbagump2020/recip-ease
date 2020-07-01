@@ -25,7 +25,7 @@ const NewRecipeForm = () => {
     const { recipe } = useSelector(state => ({ recipe: state.recipe.recipe }))
 
     const handleSubmit = async () => {
-        const submitResponse = await fetch(`/recipes`, {
+        const submitResponse = await fetch(`http://localhost:3001/recipes`, {
             method: 'POST',
             credentials: 'include',
             headers: {
@@ -47,9 +47,6 @@ const NewRecipeForm = () => {
         <Box>
             <AppBar position="sticky">
                 <Toolbar>
-                    <Typography variant="h5" className={classes.title}>
-                        {`${authUser.token.username}'s New Recipe`}
-                    </Typography>
                     <RecipeIndexButton />
                     <UserHomeButton />
                     <SignOutButton />

@@ -38,7 +38,7 @@ const SignIn = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const resultUser = await fetch(`/login`, {
+        const resultUser = await fetch(`http://localhost:3001/login`, {
             method: 'POST',
             credentials: 'include',
             headers: {

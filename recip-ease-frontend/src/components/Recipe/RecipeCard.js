@@ -68,7 +68,7 @@ const RecipeCard = (props) => {
 
     const handleDeleteClick = () => {
         const asyncDeleteFetch = async () => {
-            const deleteResponse = await fetch(`/recipes/${recipe.id}`,{
+            const deleteResponse = await fetch(`http://localhost:3001/recipes/${recipe.id}`,{
                 method: "delete",
                 credentials: "include"
             })

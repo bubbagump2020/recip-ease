@@ -14,7 +14,7 @@ const UpdateRecipeForm = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const updatedRecipeResponse = await fetch(`/recipes/${recipe.id}`, {
+        const updatedRecipeResponse = await fetch(`http:localhost:3001/recipes/${recipe.id}`, {
             method: 'PATCH',
             credentials: 'include',
             headers: {

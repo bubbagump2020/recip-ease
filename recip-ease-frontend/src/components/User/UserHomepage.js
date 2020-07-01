@@ -37,7 +37,7 @@ const UserHomepage = () => {
             <AppBar className={classes.appBar} >
                 <Toolbar>
                     <Typography variant="h5" className={classes.title}>
-                        Recip-Ease User Home
+                        Home
                     </Typography>
                     <RecipeIndexButton />
                     <CreateRecipeButton />
